@@ -1,7 +1,7 @@
 filmes_favoritados = []
 
-def adicionar_filme_favoritado(titulo,genero,ano):    
-    filme_favoritado = [titulo,genero,ano]
+def adicionar_filme_favoritado(cod_filme,titulo,genero,ano):    
+    filme_favoritado = [cod_filme,titulo,genero,ano]
     filmes_favoritados.append(filme_favoritado)
     
 def listar_filmes_favoritados():
