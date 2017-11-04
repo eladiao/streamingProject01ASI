@@ -1,7 +1,7 @@
 filmes = []
 
-def adicionar_filme(titulo,genero,ano):    
-    filme = [titulo,genero,ano]
+def adicionar_filme(cod_filme,titulo,genero,ano):    
+    filme = [cod_filme,titulo,genero,ano]
     filmes.append(filme)
     
 def listar_filmes():
