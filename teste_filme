@@ -1,0 +1,56 @@
+import unittest
+from LOGIC import filme
+
+class TestFilme (unittest.TestCase):
+    
+    def setUp(self):
+        filme.remover_todos_filmes()
+        
+    def test_sem_filmes(self):
+        filmes = filme.listar_filmes()
+        self.assertEqual(0, len(filmes))
+        
+    def test_adicionar_um_filme(self):
+        filme.adicionar_filme(2222, "A Bruxa", "Terror", "2016")
+
+        filmes = filme.listar_filmes()
+        self.assertEqual(1, len(filmes))
+
+        f = filmes[0]
+        
+        self.assertEqual("A Bruxa", u[0])        
+        self.assertEqual("Terror", u[1])
+        self.assertEqual("2016", u[2])
+        
+
+    def test_adicionar_dois_filmes(self):
+        filme.adicionar_filme(2222, "A Bruxa", "Terror", "2016")
+        filme.adicionar_filme(1111, "Riverdale", "Suspense", "2016")
+        filmes = filme.listar_filmes()
+        self.assertEqual(2, len(filmes))
+
+    def test_buscar_filme(self):
+        filme.adicionar_filme(2222, "A Bruxa", "Terror", "2016")
+        filme.adicionar_filme(1111, "Riverdale", "Suspense", "2016")
+
+        f = filme.buscar_filme(1111)
+        self.assertEqual(1111, u[0])
+        self.assertEqual("Riverdale", u[1])
+        
+    def test_remover_filme(self):
+        filme.adicionar_filme(2222, "A Bruxa", "Terror", "2016")
+        filme.adicionar_filme(1111, "Riverdale", "Suspense", "2016")
+        
+        filme.remover_filme(1111)
+        
+        f = filme.buscar_filme(1111)        
+        self.assertIsNone(f)
+        
+    def test_iniciar_filme(self):
+        filme.iniciar_filmes()
+        filmes = filme.listar_filmes()
+        self.assertEqual(2, len(filmes))
+            
+if __name__ == '__main__':
+    unittest.main(exit=False)
+
