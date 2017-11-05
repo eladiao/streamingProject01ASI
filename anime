@@ -1,0 +1,39 @@
+anime = []
+
+#Mangaka é quem escreveu o manga que posteriormente foi transformado em anime
+
+def adicionar_anime(cod_anime,titulo,genero,ano,mangaka):    
+    anime = [cod_anime,titulo,genero,ano,país,mangaka]
+    anime.append(anime)
+    
+def listar_animes():
+    return animes
+
+def buscar_animes(cod_anime):
+    for a in animes:
+        if (a[0] == cod_anime):
+            return a
+    return None
+
+def buscar_anime_por_genero(genero):
+    for a in animes:
+        if (a[0] == genero):
+            return a
+    return None
+
+def remover_animes(cod_animes):
+    for a in animes:
+        if (a[0] == cod_anime):
+            serie.remove(a)
+            return True
+    return False
+
+def buscar_anime_por_mangaka(mangaka):
+    for a in animes
+        if (a[0] == mangaka):
+            return a
+    return None 
+    
+def iniciar_animes():
+    adicionar_animes(2020, "Kuroshitsuji", "Shonen", 2006, "Yana Toboso")
+    adicionar_animes(2121, "Bleach", "Shonen", 2001, "Tite Kubo")
