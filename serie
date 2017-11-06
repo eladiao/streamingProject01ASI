@@ -1,0 +1,38 @@
+series = []
+
+def adicionar_serie(cod_serie,titulo,genero,ano,país,elenco):    
+    serie = [cod_serie,titulo,genero,ano,país,elenco]
+    serie.append(serie)
+    
+def listar_series():
+    return series
+
+def buscar_series(cod_serie):
+    for s in series:
+        if (s[0] == cod_serie):
+            return s
+    return None
+
+def buscar_serie_por_genero(genero):
+    for s in series:
+        if (s[0] == genero):
+            return s
+    return None
+
+def remover_serie(cod_serie):
+    for s in series:
+        if (s[0] == cod_serie):
+            serie.remove(s)
+            return True
+    return False
+
+def buscar_serie_por_elenco(elenco):
+    for s in series
+        if (s[0] == elenco):
+            return s
+    return None 
+    
+def iniciar_series():
+    adicionar_serie(1717, "Stranger Things", "Ficcão Cientifica", 2016, "EUA", "Winona Ryder, Gaten Matarazzo, Natalia Dyer, Cara Buono")
+    adicionar_serie(1818, "Riverdale", "Misterio, Drama", 2017, "EUA", "KJ Apa, Camila Mendes, Lili Reinhart, Cole Sprouse, Madelaine Petsch")
+
