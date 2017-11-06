@@ -1,0 +1,67 @@
+from LOGIC import serie
+
+def imprimir_serie(serie):
+    titulo = serie[1]
+    genero = serie[2]
+    ano = serie[3]
+    cod_serie = serie[0]
+    print ("Titulo: ",  titulo[1])
+    print ("Genero: ", genero[2])
+    print ("Ano: ", ano[3])        
+    print ("Codigo da serie: ", cod_serie[0])        
+    print() 
+
+def menu_adicionar():
+    print ("\nAdicionar serie\n")
+    cod_serie = int(input("Codigo da serie: "))
+    titulo = str(input("Titulo: "))
+    ano = int (input("Ano: "))
+    genero = str(input("Genero: "))
+    adicionou = serie.adicionar_serie(cod_serie,titulo,ano,genero)
+    print ("Serie Adicionada")
+    
+def menu_listar():
+    print ("\nListar serie \n")
+    serie = serie.listar_series()
+    for s in series:
+        imprimir_serie(s)
+
+def menu_buscar():
+    print ("\nBuscar serie \n")
+    cod_serie = int(input("Código da serie: "))
+    s = serie.buscar_consulta(cod_serie)
+    if (s == None):
+        print ("serie não encontrada")
+    else:
+        imprimir_serie(s)
+
+def menu_remover():
+    print ("\nRemover series \n")
+    cod_serie = int(input("Codigo da serie: "))
+    s = serie.remover_consulta(cod_serie)
+    if (f == False):
+        print ("serie não encontrada")
+    else:
+        print ("serie removida")
+
+    
+def mostrar_menu():
+    run_serie = True
+    menu = ("\n----------------\n"+
+             "(1) Listar series \n" +
+             "(2) Buscar serie por código \n" +
+             "(3) Remover serie \n" +
+             "(0) Voltar\n"+
+            "----------------")
+    while(run_serie):
+        print (menu)
+        op = int(input("Digite sua escolha: "))
+
+        if (op == 1):
+            menu_listar()
+        elif(op == 2):       
+            menu_buscar()
+        elif (op == 3):
+            menu_remover()
+        elif (op == 0):
+            run_serie = False
